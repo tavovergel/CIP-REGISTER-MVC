@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CIPREGISTER_MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMINISTRADOR">
+          <Key>
+            <PropertyRef Name="Identificacion_admin" />
+          </Key>
+          <Property Name="Identificacion_admin" Type="int" Nullable="false" />
+          <Property Name="Nombre_admin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido_admin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo_admin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tel_admin_admin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cargo_admin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pass_admin" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ENCARGADO">
+          <Key>
+            <PropertyRef Name="Identificacion_encargado" />
+          </Key>
+          <Property Name="Identificacion_encargado" Type="int" Nullable="false" />
+          <Property Name="Nombre_encargado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Apellido_encargado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Cargo_encargado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Correo_encargado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Telefono_encargado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Pass_encargado" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Identificacion_admin" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__ENCARGADO__Ident__36B12243">
+          <End Role="ADMINISTRADOR" Type="Self.ADMINISTRADOR" Multiplicity="1" />
+          <End Role="ENCARGADO" Type="Self.ENCARGADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADMINISTRADOR">
+              <PropertyRef Name="Identificacion_admin" />
+            </Principal>
+            <Dependent Role="ENCARGADO">
+              <PropertyRef Name="Identificacion_admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CIPREGISTER_MVCModelStoreContainer">
+          <EntitySet Name="ADMINISTRADOR" EntityType="Self.ADMINISTRADOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ENCARGADO" EntityType="Self.ENCARGADO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ENCARGADO__Ident__36B12243" Association="Self.FK__ENCARGADO__Ident__36B12243">
+            <End Role="ADMINISTRADOR" EntitySet="ADMINISTRADOR" />
+            <End Role="ENCARGADO" EntitySet="ENCARGADO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CIPREGISTER_MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMINISTRADOR">
+          <Key>
+            <PropertyRef Name="Identificacion_admin" />
+          </Key>
+          <Property Name="Identificacion_admin" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Correo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tel_admin_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cargo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pass_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ENCARGADO" Relationship="Self.FK__ENCARGADO__Ident__36B12243" FromRole="ADMINISTRADOR" ToRole="ENCARGADO" />
+        </EntityType>
+        <EntityType Name="ENCARGADO">
+          <Key>
+            <PropertyRef Name="Identificacion_encargado" />
+          </Key>
+          <Property Name="Identificacion_encargado" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cargo_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Correo_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pass_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Identificacion_admin" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ADMINISTRADOR" Relationship="Self.FK__ENCARGADO__Ident__36B12243" FromRole="ENCARGADO" ToRole="ADMINISTRADOR" />
+        </EntityType>
+        <Association Name="FK__ENCARGADO__Ident__36B12243">
+          <End Role="ADMINISTRADOR" Type="Self.ADMINISTRADOR" Multiplicity="1" />
+          <End Role="ENCARGADO" Type="Self.ENCARGADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADMINISTRADOR">
+              <PropertyRef Name="Identificacion_admin" />
+            </Principal>
+            <Dependent Role="ENCARGADO">
+              <PropertyRef Name="Identificacion_admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CIPREGISTER_MVCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINISTRADOR" EntityType="Self.ADMINISTRADOR" />
+          <EntitySet Name="ENCARGADO" EntityType="Self.ENCARGADO" />
+          <AssociationSet Name="FK__ENCARGADO__Ident__36B12243" Association="Self.FK__ENCARGADO__Ident__36B12243">
+            <End Role="ADMINISTRADOR" EntitySet="ADMINISTRADOR" />
+            <End Role="ENCARGADO" EntitySet="ENCARGADO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CIPREGISTER_MVCModelStoreContainer" CdmEntityContainer="CIPREGISTER_MVCEntities">
+          <EntitySetMapping Name="ADMINISTRADOR">
+            <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.ADMINISTRADOR">
+              <MappingFragment StoreEntitySet="ADMINISTRADOR">
+                <ScalarProperty Name="Identificacion_admin" ColumnName="Identificacion_admin" />
+                <ScalarProperty Name="Nombre_admin" ColumnName="Nombre_admin" />
+                <ScalarProperty Name="Apellido_admin" ColumnName="Apellido_admin" />
+                <ScalarProperty Name="Correo_admin" ColumnName="Correo_admin" />
+                <ScalarProperty Name="Tel_admin_admin" ColumnName="Tel_admin_admin" />
+                <ScalarProperty Name="Cargo_admin" ColumnName="Cargo_admin" />
+                <ScalarProperty Name="Pass_admin" ColumnName="Pass_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ENCARGADO">
+            <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.ENCARGADO">
+              <MappingFragment StoreEntitySet="ENCARGADO">
+                <ScalarProperty Name="Identificacion_encargado" ColumnName="Identificacion_encargado" />
+                <ScalarProperty Name="Nombre_encargado" ColumnName="Nombre_encargado" />
+                <ScalarProperty Name="Apellido_encargado" ColumnName="Apellido_encargado" />
+                <ScalarProperty Name="Cargo_encargado" ColumnName="Cargo_encargado" />
+                <ScalarProperty Name="Correo_encargado" ColumnName="Correo_encargado" />
+                <ScalarProperty Name="Telefono_encargado" ColumnName="Telefono_encargado" />
+                <ScalarProperty Name="Pass_encargado" ColumnName="Pass_encargado" />
+                <ScalarProperty Name="Identificacion_admin" ColumnName="Identificacion_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

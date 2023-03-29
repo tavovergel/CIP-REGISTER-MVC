@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CIPREGISTER_MVCModelStoreContainer" CdmEntityContainer="CIPREGISTER_MVCEntities">
+    <EntitySetMapping Name="ADMINISTRADOR">
+      <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.ADMINISTRADOR">
+        <MappingFragment StoreEntitySet="ADMINISTRADOR">
+          <ScalarProperty Name="Identificacion_admin" ColumnName="Identificacion_admin" />
+          <ScalarProperty Name="Nombre_admin" ColumnName="Nombre_admin" />
+          <ScalarProperty Name="Apellido_admin" ColumnName="Apellido_admin" />
+          <ScalarProperty Name="Correo_admin" ColumnName="Correo_admin" />
+          <ScalarProperty Name="Tel_admin_admin" ColumnName="Tel_admin_admin" />
+          <ScalarProperty Name="Cargo_admin" ColumnName="Cargo_admin" />
+          <ScalarProperty Name="Pass_admin" ColumnName="Pass_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENCARGADO">
+      <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.ENCARGADO">
+        <MappingFragment StoreEntitySet="ENCARGADO">
+          <ScalarProperty Name="Identificacion_encargado" ColumnName="Identificacion_encargado" />
+          <ScalarProperty Name="Nombre_encargado" ColumnName="Nombre_encargado" />
+          <ScalarProperty Name="Apellido_encargado" ColumnName="Apellido_encargado" />
+          <ScalarProperty Name="Cargo_encargado" ColumnName="Cargo_encargado" />
+          <ScalarProperty Name="Correo_encargado" ColumnName="Correo_encargado" />
+          <ScalarProperty Name="Telefono_encargado" ColumnName="Telefono_encargado" />
+          <ScalarProperty Name="Pass_encargado" ColumnName="Pass_encargado" />
+          <ScalarProperty Name="Identificacion_admin" ColumnName="Identificacion_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

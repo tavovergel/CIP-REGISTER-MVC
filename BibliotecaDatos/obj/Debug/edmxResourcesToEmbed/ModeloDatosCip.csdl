@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CIPREGISTER_MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADMINISTRADOR">
+    <Key>
+      <PropertyRef Name="Identificacion_admin" />
+    </Key>
+    <Property Name="Identificacion_admin" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Correo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tel_admin_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cargo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pass_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ENCARGADO" Relationship="Self.FK__ENCARGADO__Ident__36B12243" FromRole="ADMINISTRADOR" ToRole="ENCARGADO" />
+  </EntityType>
+  <EntityType Name="ENCARGADO">
+    <Key>
+      <PropertyRef Name="Identificacion_encargado" />
+    </Key>
+    <Property Name="Identificacion_encargado" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cargo_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Correo_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pass_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Identificacion_admin" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ADMINISTRADOR" Relationship="Self.FK__ENCARGADO__Ident__36B12243" FromRole="ENCARGADO" ToRole="ADMINISTRADOR" />
+  </EntityType>
+  <Association Name="FK__ENCARGADO__Ident__36B12243">
+    <End Role="ADMINISTRADOR" Type="Self.ADMINISTRADOR" Multiplicity="1" />
+    <End Role="ENCARGADO" Type="Self.ENCARGADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADMINISTRADOR">
+        <PropertyRef Name="Identificacion_admin" />
+      </Principal>
+      <Dependent Role="ENCARGADO">
+        <PropertyRef Name="Identificacion_admin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CIPREGISTER_MVCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADMINISTRADOR" EntityType="Self.ADMINISTRADOR" />
+    <EntitySet Name="ENCARGADO" EntityType="Self.ENCARGADO" />
+    <AssociationSet Name="FK__ENCARGADO__Ident__36B12243" Association="Self.FK__ENCARGADO__Ident__36B12243">
+      <End Role="ADMINISTRADOR" EntitySet="ADMINISTRADOR" />
+      <End Role="ENCARGADO" EntitySet="ENCARGADO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
