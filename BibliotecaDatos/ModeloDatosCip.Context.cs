@@ -27,5 +27,9 @@ namespace BibliotecaDatos
     
         public virtual DbSet<ADMINISTRADOR> ADMINISTRADOR { get; set; }
         public virtual DbSet<ENCARGADO> ENCARGADO { get; set; }
+        public virtual DbSet<ACTIVIDAD> ACTIVIDAD { get; set; }
+        public virtual DbSet<ACTIVIDAD_HAS_APRENDIZ> ACTIVIDAD_HAS_APRENDIZ { get; set; }
+        public virtual DbSet<APRENDIZ> APRENDIZ { get; set; }
+        public virtual DbSet<REPORTE> REPORTE { get; set; }
     }
 }

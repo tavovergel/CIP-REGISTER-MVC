@@ -28,5 +28,56 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVIDAD">
+      <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.ACTIVIDAD">
+        <MappingFragment StoreEntitySet="ACTIVIDAD">
+          <ScalarProperty Name="Identificacion_encargado" ColumnName="Identificacion_encargado" />
+          <ScalarProperty Name="Ciudad_actividad" ColumnName="Ciudad_actividad" />
+          <ScalarProperty Name="Fecha_actividad" ColumnName="Fecha_actividad" />
+          <ScalarProperty Name="Objetivo_operativo_actividad" ColumnName="Objetivo_operativo_actividad" />
+          <ScalarProperty Name="Objetivo_estrategico_actividad" ColumnName="Objetivo_estrategico_actividad" />
+          <ScalarProperty Name="Proposito_actividad" ColumnName="Proposito_actividad" />
+          <ScalarProperty Name="Centro_formacion_actividad" ColumnName="Centro_formacion_actividad" />
+          <ScalarProperty Name="Nombre_actividad" ColumnName="Nombre_actividad" />
+          <ScalarProperty Name="Cod_actividad" ColumnName="Cod_actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVIDAD_HAS_APRENDIZ">
+      <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.ACTIVIDAD_HAS_APRENDIZ">
+        <MappingFragment StoreEntitySet="ACTIVIDAD_HAS_APRENDIZ">
+          <ScalarProperty Name="Identificacion_aprendiz" ColumnName="Identificacion_aprendiz" />
+          <ScalarProperty Name="Cod_actividad" ColumnName="Cod_actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APRENDIZ">
+      <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.APRENDIZ">
+        <MappingFragment StoreEntitySet="APRENDIZ">
+          <ScalarProperty Name="Identificacion_encargado" ColumnName="Identificacion_encargado" />
+          <ScalarProperty Name="Telefono_aprendiz" ColumnName="Telefono_aprendiz" />
+          <ScalarProperty Name="Correo_aprendiz" ColumnName="Correo_aprendiz" />
+          <ScalarProperty Name="Centro_formacion" ColumnName="Centro_formacion" />
+          <ScalarProperty Name="Nivel_formacion" ColumnName="Nivel_formacion" />
+          <ScalarProperty Name="Jornada_formacion" ColumnName="Jornada_formacion" />
+          <ScalarProperty Name="Programa_formacion" ColumnName="Programa_formacion" />
+          <ScalarProperty Name="Modalidad_formacion" ColumnName="Modalidad_formacion" />
+          <ScalarProperty Name="Ficha_aprendiz" ColumnName="Ficha_aprendiz" />
+          <ScalarProperty Name="Genero_aprendiz" ColumnName="Genero_aprendiz" />
+          <ScalarProperty Name="Nombre_aprendiz" ColumnName="Nombre_aprendiz" />
+          <ScalarProperty Name="Tipo_documento" ColumnName="Tipo_documento" />
+          <ScalarProperty Name="Identificacion_aprendiz" ColumnName="Identificacion_aprendiz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REPORTE">
+      <EntityTypeMapping TypeName="CIPREGISTER_MVCModel.REPORTE">
+        <MappingFragment StoreEntitySet="REPORTE">
+          <ScalarProperty Name="Cod_actividad" ColumnName="Cod_actividad" />
+          <ScalarProperty Name="fecha_reporte" ColumnName="fecha_reporte" />
+          <ScalarProperty Name="Cod_reporte" ColumnName="Cod_reporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

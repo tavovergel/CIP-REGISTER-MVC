@@ -10,3 +10,15 @@ D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\BibliotecaDatos\obj\Debug\Bib
 D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\BibliotecaDatos\obj\Debug\BibliotecaDatos.csproj.CopyComplete
 D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\BibliotecaDatos\obj\Debug\BibliotecaDatos.dll
 D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\BibliotecaDatos\obj\Debug\BibliotecaDatos.pdb
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\BibliotecaDatos.dll.config
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\BibliotecaDatos.dll
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\BibliotecaDatos.pdb
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\EntityFramework.dll
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\EntityFramework.SqlServer.dll
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\EntityFramework.xml
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\bin\Debug\EntityFramework.SqlServer.xml
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\obj\Debug\BibliotecaDatos.csproj.AssemblyReference.cache
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\obj\Debug\BibliotecaDatos.csproj.CoreCompileInputs.cache
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\obj\Debug\BibliotecaDatos.csproj.CopyComplete
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\obj\Debug\BibliotecaDatos.dll
+D:\Gustavo vergel Arellano\ASP.NET\CIPREGISTER-MVC\CIPREGISTER-ASP.NET\BibliotecaDatos\obj\Debug\BibliotecaDatos.pdb

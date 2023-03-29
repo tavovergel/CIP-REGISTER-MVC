@@ -12,28 +12,26 @@ namespace BibliotecaDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class ENCARGADO
+    public partial class ACTIVIDAD
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ENCARGADO()
+        public ACTIVIDAD()
         {
-            this.ACTIVIDAD = new HashSet<ACTIVIDAD>();
-            this.APRENDIZ = new HashSet<APRENDIZ>();
+            this.REPORTE = new HashSet<REPORTE>();
         }
     
+        public int Cod_actividad { get; set; }
+        public string Nombre_actividad { get; set; }
+        public string Centro_formacion_actividad { get; set; }
+        public string Proposito_actividad { get; set; }
+        public string Objetivo_estrategico_actividad { get; set; }
+        public string Objetivo_operativo_actividad { get; set; }
+        public string Fecha_actividad { get; set; }
+        public string Ciudad_actividad { get; set; }
         public int Identificacion_encargado { get; set; }
-        public string Nombre_encargado { get; set; }
-        public string Apellido_encargado { get; set; }
-        public string Cargo_encargado { get; set; }
-        public string Correo_encargado { get; set; }
-        public string Telefono_encargado { get; set; }
-        public string Pass_encargado { get; set; }
-        public int Identificacion_admin { get; set; }
     
-        public virtual ADMINISTRADOR ADMINISTRADOR { get; set; }
+        public virtual ENCARGADO ENCARGADO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ACTIVIDAD> ACTIVIDAD { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<APRENDIZ> APRENDIZ { get; set; }
+        public virtual ICollection<REPORTE> REPORTE { get; set; }
     }
 }

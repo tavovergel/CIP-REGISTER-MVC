@@ -26,6 +26,8 @@
     <Property Name="Pass_encargado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Identificacion_admin" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ADMINISTRADOR" Relationship="Self.FK__ENCARGADO__Ident__36B12243" FromRole="ENCARGADO" ToRole="ADMINISTRADOR" />
+    <NavigationProperty Name="ACTIVIDAD" Relationship="CIPREGISTER_MVCModel.FK__ACTIVIDAD__Ident__49C3F6B7" FromRole="ENCARGADO" ToRole="ACTIVIDAD" />
+    <NavigationProperty Name="APRENDIZ" Relationship="CIPREGISTER_MVCModel.FK__APRENDIZ__Identi__4F7CD00D" FromRole="ENCARGADO" ToRole="APRENDIZ" />
   </EntityType>
   <Association Name="FK__ENCARGADO__Ident__36B12243">
     <End Role="ADMINISTRADOR" Type="Self.ADMINISTRADOR" Multiplicity="1" />
@@ -46,5 +48,109 @@
       <End Role="ADMINISTRADOR" EntitySet="ADMINISTRADOR" />
       <End Role="ENCARGADO" EntitySet="ENCARGADO" />
     </AssociationSet>
+    <EntitySet Name="ACTIVIDAD" EntityType="CIPREGISTER_MVCModel.ACTIVIDAD" />
+    <EntitySet Name="ACTIVIDAD_HAS_APRENDIZ" EntityType="CIPREGISTER_MVCModel.ACTIVIDAD_HAS_APRENDIZ" />
+    <EntitySet Name="APRENDIZ" EntityType="CIPREGISTER_MVCModel.APRENDIZ" />
+    <EntitySet Name="REPORTE" EntityType="CIPREGISTER_MVCModel.REPORTE" />
+    <AssociationSet Name="FK__ACTIVIDAD__Ident__49C3F6B7" Association="CIPREGISTER_MVCModel.FK__ACTIVIDAD__Ident__49C3F6B7">
+      <End Role="ENCARGADO" EntitySet="ENCARGADO" />
+      <End Role="ACTIVIDAD" EntitySet="ACTIVIDAD" />
+    </AssociationSet>
+    <AssociationSet Name="FK__REPORTE__Cod_act__4CA06362" Association="CIPREGISTER_MVCModel.FK__REPORTE__Cod_act__4CA06362">
+      <End Role="ACTIVIDAD" EntitySet="ACTIVIDAD" />
+      <End Role="REPORTE" EntitySet="REPORTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__APRENDIZ__Identi__4F7CD00D" Association="CIPREGISTER_MVCModel.FK__APRENDIZ__Identi__4F7CD00D">
+      <End Role="ENCARGADO" EntitySet="ENCARGADO" />
+      <End Role="APRENDIZ" EntitySet="APRENDIZ" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ACTIVIDAD">
+    <Key>
+      <PropertyRef Name="Cod_actividad" />
+    </Key>
+    <Property Name="Cod_actividad" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Centro_formacion_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proposito_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Objetivo_estrategico_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Objetivo_operativo_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ciudad_actividad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Identificacion_encargado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ENCARGADO" Relationship="CIPREGISTER_MVCModel.FK__ACTIVIDAD__Ident__49C3F6B7" FromRole="ACTIVIDAD" ToRole="ENCARGADO" />
+    <NavigationProperty Name="REPORTE" Relationship="CIPREGISTER_MVCModel.FK__REPORTE__Cod_act__4CA06362" FromRole="ACTIVIDAD" ToRole="REPORTE" />
+  </EntityType>
+  <EntityType Name="ACTIVIDAD_HAS_APRENDIZ">
+    <Key>
+      <PropertyRef Name="Cod_actividad" />
+      <PropertyRef Name="Identificacion_aprendiz" />
+    </Key>
+    <Property Name="Cod_actividad" Type="Int32" Nullable="false" />
+    <Property Name="Identificacion_aprendiz" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APRENDIZ">
+    <Key>
+      <PropertyRef Name="Identificacion_aprendiz" />
+    </Key>
+    <Property Name="Identificacion_aprendiz" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_documento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre_aprendiz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Genero_aprendiz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ficha_aprendiz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Modalidad_formacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Programa_formacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Jornada_formacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nivel_formacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Centro_formacion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Correo_aprendiz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono_aprendiz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Identificacion_encargado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ENCARGADO" Relationship="CIPREGISTER_MVCModel.FK__APRENDIZ__Identi__4F7CD00D" FromRole="APRENDIZ" ToRole="ENCARGADO" />
+  </EntityType>
+  <EntityType Name="REPORTE">
+    <Key>
+      <PropertyRef Name="Cod_reporte" />
+    </Key>
+    <Property Name="Cod_reporte" Type="Int32" Nullable="false" />
+    <Property Name="fecha_reporte" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cod_actividad" Type="Int32" />
+    <NavigationProperty Name="ACTIVIDAD" Relationship="CIPREGISTER_MVCModel.FK__REPORTE__Cod_act__4CA06362" FromRole="REPORTE" ToRole="ACTIVIDAD" />
+  </EntityType>
+  <Association Name="FK__ACTIVIDAD__Ident__49C3F6B7">
+    <End Type="CIPREGISTER_MVCModel.ENCARGADO" Role="ENCARGADO" Multiplicity="1" />
+    <End Type="CIPREGISTER_MVCModel.ACTIVIDAD" Role="ACTIVIDAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENCARGADO">
+        <PropertyRef Name="Identificacion_encargado" />
+      </Principal>
+      <Dependent Role="ACTIVIDAD">
+        <PropertyRef Name="Identificacion_encargado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__REPORTE__Cod_act__4CA06362">
+    <End Type="CIPREGISTER_MVCModel.ACTIVIDAD" Role="ACTIVIDAD" Multiplicity="0..1" />
+    <End Type="CIPREGISTER_MVCModel.REPORTE" Role="REPORTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACTIVIDAD">
+        <PropertyRef Name="Cod_actividad" />
+      </Principal>
+      <Dependent Role="REPORTE">
+        <PropertyRef Name="Cod_actividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__APRENDIZ__Identi__4F7CD00D">
+    <End Type="CIPREGISTER_MVCModel.ENCARGADO" Role="ENCARGADO" Multiplicity="1" />
+    <End Type="CIPREGISTER_MVCModel.APRENDIZ" Role="APRENDIZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENCARGADO">
+        <PropertyRef Name="Identificacion_encargado" />
+      </Principal>
+      <Dependent Role="APRENDIZ">
+        <PropertyRef Name="Identificacion_encargado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

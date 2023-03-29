@@ -8,6 +8,13 @@
         <EntityTypeShape EntityType="CIPREGISTER_MVCModel.ADMINISTRADOR" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CIPREGISTER_MVCModel.ENCARGADO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="CIPREGISTER_MVCModel.FK__ENCARGADO__Ident__36B12243" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CIPREGISTER_MVCModel.ACTIVIDAD" Width="2.25" PointX="5.875" PointY="13.75" />
+        <EntityTypeShape EntityType="CIPREGISTER_MVCModel.ACTIVIDAD_HAS_APRENDIZ" Width="2.25" PointX="6" PointY="2.5" />
+        <EntityTypeShape EntityType="CIPREGISTER_MVCModel.APRENDIZ" Width="2.25" PointX="5.875" PointY="9.125" />
+        <EntityTypeShape EntityType="CIPREGISTER_MVCModel.REPORTE" Width="2.25" PointX="8.125" PointY="14.5" />
+        <AssociationConnector Association="CIPREGISTER_MVCModel.FK__ACTIVIDAD__Ident__49C3F6B7" />
+        <AssociationConnector Association="CIPREGISTER_MVCModel.FK__REPORTE__Cod_act__4CA06362" />
+        <AssociationConnector Association="CIPREGISTER_MVCModel.FK__APRENDIZ__Identi__4F7CD00D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
